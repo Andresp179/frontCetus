@@ -13,25 +13,11 @@ export class ListaProductosComponent {
 
   constructor(private productoServicio: ProductosService){}
 
-  ngOnInit():void{
-   this.productos=[{
-     "idProducto":1,
-     "nombreProducto":"Carbamazepina",
-     "descripcion": "Medicamento para dolor de cabeza",
-     "estado": "Si hay",
-     "nombreLaboratorio": "Invima"
-    },
-    {
-    "idProducto":2,
-    "nombreProducto":"Carbamazepina",
-    "descripcion": "Medicamento para dolor de cabeza",
-    "estado": "No hay",
-    "nombreLaboratorio": "Invima"
-     }
-  ];
+  ngOnInit():void{   
+  this.obtenerProductos();
   }
 
-  private obtenerEmpleados(){
+  private obtenerProductos(){
     this.productoServicio.obtenerListaProductos().subscribe(dato => {
       this.productos = dato;
     });

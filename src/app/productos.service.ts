@@ -8,12 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class ProductosService {
 
-  private baseURL= "http://localhost:8080/api/vi/Producto"// todos los productos
+  private baseURL= "http://localhost:8080/api/v1/productos"// todos los productos del back
 
   constructor(private httpClient : HttpClient) { }
 
+  //metodo para obtener productos
   obtenerListaProductos():Observable<Producto[]>{
-   return this.httpClient.get<Producto[]>('$this.baseURL');
+   return this.httpClient.get<Producto[]>(`${this.baseURL}`);
 
   }
 }
