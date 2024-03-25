@@ -21,4 +21,17 @@ export class ProductosService {
     registrarProducto(producto:Producto) : Observable<Object>{
     return this.httpClient.post(`${this.baseURL}`,producto);
   }
+   //este metodo sirve para actualizar el empleado
+   actualizarProducto(id:number,producto:Producto) : Observable<Object>{
+    return this.httpClient.put(`${this.baseURL}/${id}`,producto);
+  }
+
+  //este metodo sirve para obtener o buscar un empleado
+  obtenerProductoPorId(id:number):Observable<Producto>{
+    return this.httpClient.get<Producto>(`${this.baseURL}/${id}`);
+  }
+
+  eliminarProducto(id:number): Observable<Object>{
+    return this.httpClient.delete(`${this.baseURL}/${id}`);
+  }
 }

@@ -7,15 +7,20 @@
         <th>Estado</th>
         <th>Nombre del Laboratorio</th>
         <th>Nombre del Producto</th>
+        <th>Acciones</th>
     </tr>
   </thead>
   <tbody>
      <tr *ngFor="let produto of productos">
-        <th>{{produto.idProducto}}</th>
-        <th>{{produto.descripcion}}</th>
-        <th>{{produto.estado}}</th>
-        <th>{{produto.nombreLaboratorio}}</th>
-        <th>{{produto.nombreProducto}}</th>
+        <td>{{produto.idProducto}}</td>
+        <td>{{produto.descripcion}}</td>
+        <td>{{produto.estado}}</td>
+        <td>{{produto.nombreLaboratorio}}</td>
+        <td>{{produto.nombreProducto}}</td>
+        <td>
+          <button (click)= "actualizarProducto(produto.idProducto)" class="btn btn-info">Editar</button>
+          <button (click)= "eliminarProducto(produto.idProducto)" class="btn btn-danger" style="margin-left : 10px;">Eliminar</button>
+        </td>
      </tr>
   </tbody>
 </table>
