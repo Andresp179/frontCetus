@@ -1,0 +1,67 @@
+<div class="col-md-6 offset-md-3">
+  <h3 class="text-center">Registro de productos</h3>
+  <form (ngSubmit)= "onSubmit()" #productoForm="ngForm">
+    <div class="form-group">
+      <label>Nombre : </label>
+      <input type = "text"
+      class="form-control"
+      id = "nombre"
+      [(ngModel)] = "productos.nombreProducto"
+      name = "nombre"
+      required
+      minlength="4"
+      maxlength="10"
+      placeholder="Digite nombre del producto "
+      #nombre = "ngModel"
+      >
+    </div>
+
+
+    <div class="form-group">
+      <label>Descripcion: </label>
+      <input type = "text"
+      class="form-control"
+      id = "Descripcion"
+      [(ngModel)] = "productos.descripcion"
+      name = "descripcion"
+      required
+      minlength="4"
+      maxlength="10"
+      placeholder="Digite descripcion "
+      #nombre = "ngModel"
+      >
+    </div>
+
+    <div class="form-group">
+      <label>Estado: </label>
+      <input type = "text"
+      class="form-control"
+      id = "Estado"
+      [(ngModel)] = "productos.estado"
+      name = "estado"
+      required
+      minlength="4"
+      maxlength="10"
+      placeholder="Digite estado "
+      #nombre = "ngModel"
+      >
+    </div>
+
+    <div class="form-group">
+      <label>Nombre del laboratorio: </label>
+      <input type = "text"
+      class="form-control"
+      id = "nombreLaboratorio"
+      [(ngModel)] = "productos.nombreLaboratorio"
+      name = "nomnbreLaboratorio"
+      required
+      minlength="4"
+      maxlength="10"
+      placeholder="Digite nombre del laboratorio "
+      #nombre = "ngModel"
+      >
+    </div>
+    <button class="btn btn-success" [disabled]= "!productoForm.valid">Guardar</button>
+    
+  </form> 
+</div>

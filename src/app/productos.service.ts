@@ -16,5 +16,9 @@ export class ProductosService {
   obtenerListaProductos():Observable<Producto[]>{
    return this.httpClient.get<Producto[]>(`${this.baseURL}`);
 
+  } 
+  //este metodo nos sirve para registrar un producto
+    registrarProducto(producto:Producto) : Observable<Object>{
+    return this.httpClient.post(`${this.baseURL}`,producto);
   }
 }
